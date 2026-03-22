@@ -1,0 +1,1 @@
+A fully functional shopping cart web application built with PHP, HTML, CSS, JavaScript, and Bootstrap — featuring product listing, cart management, and a responsive UI.

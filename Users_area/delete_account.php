@@ -1,0 +1,27 @@
+
+    <h3 class="text-danger mb-4">Delete Account</h3>
+    <form action="" method="post" class="mt-5">
+        <div class="form-outline mb-5">
+            <input type="submit" class="form-control w-50 m-auto border-dark" name="delete" value="Delete Account">
+        </div>
+        <div class="form-outline mb-5">
+            <input type="submit" class="form-control w-50 m-auto border-dark" name="dont_delete" value="Dont Delete Account">
+        </div>
+    </form>
+
+    <?php
+    $username_session=$_SESSION['username'];
+    if(isset($_POST['delete'])){
+        $delete_query="Delete from user_table where username='$username_session'";
+        $result_query=mysqli_query($con,$delete_query);
+        if($result_query){
+            session_destroy();
+            echo "<script>alert('Account Deleted Successfully')</script>";
+            echo "<script>window.open('../index.php','_self')</script>";
+        }
+    }
+
+    if(isset($_POST['dont_delete'])){
+        echo "<script>window.open('profile.php','_self')</script>";
+    }
+    ?>
